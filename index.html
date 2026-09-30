@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preconcy Privacy Policy</title>
+<meta name="description" content="How Preconcy collects, uses, shares and protects your personal and health information.">
+<link rel="icon" href="logo.png">
+<style>
+  :root {
+    --bg: #fbf7f8;
+    --surface: #ffffff;
+    --text: #1f1a1c;
+    --muted: #6b6266;
+    --line: #efe4e8;
+    --accent: #e91e63;
+    --accent-soft: #fde7ef;
+    --blue: #2196f3;
+    --blue-soft: #e3f1fd;
+    --shadow: 0 1px 2px rgba(60, 20, 35, .05), 0 8px 24px rgba(60, 20, 35, .06);
+    --hero-a: #ff5c95;
+    --hero-b: #e91e63;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141012;
+      --surface: #1e191b;
+      --text: #f3eef0;
+      --muted: #b3a8ad;
+      --line: #342b2f;
+      --accent: #ff5c95;
+      --accent-soft: #3a1c28;
+      --blue: #64b5f6;
+      --blue-soft: #16283a;
+      --shadow: none;
+      --hero-a: #b0174f;
+      --hero-b: #6e0f33;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141012; --surface: #1e191b; --text: #f3eef0; --muted: #b3a8ad; --line: #342b2f;
+    --accent: #ff5c95; --accent-soft: #3a1c28; --blue: #64b5f6; --blue-soft: #16283a;
+    --shadow: none; --hero-a: #b0174f; --hero-b: #6e0f33;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.7 "Nunito", ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--hero-a), var(--hero-b));
+    color: #fff;
+    padding: 56px 16px 88px;
+    border-radius: 0 0 36px 36px;
+    text-align: center;
+  }
+  .hero .logo {
+    width: 76px; height: 76px; padding: 12px;
+    background: #fff; border-radius: 50%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+  }
+  .hero h1 { margin: 18px 0 6px; font-size: clamp(28px, 6vw, 40px); line-height: 1.2; letter-spacing: -.01em; }
+  .hero p { margin: 0; color: #fff; opacity: .9; }
+  .hero .date {
+    display: inline-block; margin-top: 18px; padding: 6px 14px;
+    background: rgba(255, 255, 255, .18); border-radius: 999px; font-size: 14px;
+  }
+
+  /* Layout */
+  .wrap {
+    max-width: 1080px; margin: -52px auto 0; padding: 0 16px 64px;
+    display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 28px; align-items: start;
+  }
+  nav.toc {
+    position: sticky; top: 20px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+    padding: 18px; box-shadow: var(--shadow);
+  }
+  nav.toc h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 8px; }
+  nav.toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+  nav.toc li { counter-increment: toc; }
+  nav.toc a {
+    display: flex; gap: 8px; padding: 6px 8px; border-radius: 10px;
+    color: var(--text); text-decoration: none; font-size: 14px; line-height: 1.4;
+  }
+  nav.toc a::before { content: counter(toc) "."; color: var(--muted); min-width: 18px; }
+  nav.toc a:hover { background: var(--accent-soft); color: var(--accent); }
+
+  main { min-width: 0; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 24px;
+    padding: 28px; box-shadow: var(--shadow); margin-bottom: 20px;
+  }
+  .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 16px; }
+  .pill {
+    display: flex; gap: 10px; align-items: flex-start;
+    background: var(--accent-soft); border-radius: 16px; padding: 14px; font-size: 14px; line-height: 1.5;
+  }
+  .pill b { display: block; }
+  .pill .ic { font-size: 20px; line-height: 1; }
+
+  section { scroll-margin-top: 20px; }
+  section + section { border-top: 1px solid var(--line); margin-top: 28px; padding-top: 28px; }
+  h2.sec { font-size: 22px; line-height: 1.3; margin: 0 0 12px; display: flex; gap: 12px; align-items: center; }
+  h2.sec .n {
+    flex: none; width: 32px; height: 32px; border-radius: 10px;
+    display: grid; place-items: center; font-size: 15px;
+    background: var(--accent-soft); color: var(--accent);
+  }
+  h3 { font-size: 17px; margin: 20px 0 6px; }
+  p, li { color: var(--text); }
+  .muted { color: var(--muted); }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px; }
+  .data {
+    border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px;
+  }
+  .data h3 { margin-top: 0; display: flex; gap: 8px; align-items: center; }
+  .data ul { margin: 0; }
+  .data.blue h3 { color: var(--blue); }
+  .data.pink h3 { color: var(--accent); }
+  .tag {
+    font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+  }
+  .data.blue .tag { background: var(--blue-soft); color: var(--blue); }
+
+  .callout {
+    border-left: 4px solid var(--accent); background: var(--accent-soft);
+    border-radius: 12px; padding: 14px 16px; margin: 16px 0;
+  }
+  .table-wrap { overflow-x: auto; margin-top: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 13px; color: var(--muted); font-weight: 700; }
+
+  footer { text-align: center; color: var(--muted); font-size: 14px; padding: 8px 16px 40px; }
+  .theme-btn {
+    position: fixed; right: 16px; bottom: 16px; width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--line); background: var(--surface); color: var(--text);
+    box-shadow: var(--shadow); cursor: pointer; font-size: 18px;
+  }
+
+  @media (max-width: 860px) {
+    .wrap { grid-template-columns: 1fr; }
+    nav.toc { position: static; }
+    nav.toc ol { columns: 2; column-gap: 8px; }
+  }
+  @media (max-width: 480px) {
+    .card { padding: 20px; border-radius: 20px; }
+    nav.toc ol { columns: 1; }
+    h2.sec { font-size: 20px; }
+  }
+  @media print {
+    .hero { background: none; color: var(--text); padding: 16px; }
+    nav.toc, .theme-btn { display: none; }
+    .wrap { display: block; margin: 0; }
+    .card { box-shadow: none; border: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="logo" src="logo.png" alt="Preconcy logo">
+  <h1>Privacy Policy</h1>
+  <p>Preconcy · Your fertility companion</p>
+  <span class="date">Effective September 30, 2026</span>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#collect">Information we collect</a></li>
+      <li><a href="#use">How we use it</a></li>
+      <li><a href="#partner">Partner sharing</a></li>
+      <li><a href="#share">Who we share it with</a></li>
+      <li><a href="#security">Storage &amp; security</a></li>
+      <li><a href="#retention">Data retention</a></li>
+      <li><a href="#rights">Your rights &amp; choices</a></li>
+      <li><a href="#delete">Deleting your account</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#medical">Medical disclaimer</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="card">
+      <p>
+        This Privacy Policy explains how <strong>Preconcy</strong> ("Preconcy", "we", "us") collects, uses,
+        shares and protects your information when you use the Preconcy mobile app and its related
+        services (together, the "Service"). Preconcy helps individuals and couples track menstrual
+        cycles, symptoms and fertility. Because this involves sensitive health information, we keep
+        what we collect to what the app needs to work.
+      </p>
+      <div class="summary">
+        <div class="pill"><span class="ic">🚫</span><span><b>No ads, no selling</b>We never sell your data or use it for advertising.</span></div>
+        <div class="pill"><span class="ic">🔒</span><span><b>Encrypted in transit</b>All app traffic uses HTTPS.</span></div>
+        <div class="pill"><span class="ic">💞</span><span><b>You control sharing</b>Data is shared with a partner only after you both accept.</span></div>
+        <div class="pill"><span class="ic">🗑️</span><span><b>Delete anytime</b>Ask us to delete your account and data.</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <section id="collect">
+        <h2 class="sec"><span class="n">1</span>Information we collect</h2>
+        <p>We collect only information you provide in the app, plus the minimum technical data needed to run the Service.</p>
+
+        <div class="grid2">
+          <div class="data">
+            <h3>👤 Account information</h3>
+            <ul>
+              <li>Name</li>
+              <li>Email address</li>
+              <li>Password (stored only as a secure one-way hash)</li>
+              <li>Gender</li>
+              <li>Date of birth</li>
+              <li>Email verification status and one-time codes (OTPs) used for verification and password reset</li>
+            </ul>
+          </div>
+          <div class="data pink">
+            <h3>🌸 Cycle &amp; symptom data <span class="tag">Health</span></h3>
+            <ul>
+              <li>Period start and end dates</li>
+              <li>Cycle length</li>
+              <li>Predicted ovulation date and fertile window (calculated by us)</li>
+              <li>Daily symptoms: mood, flow, energy level, pain level</li>
+              <li>Any notes you choose to write</li>
+            </ul>
+          </div>
+          <div class="data blue">
+            <h3>💧 Male fertility data <span class="tag">Health</span></h3>
+            <ul>
+              <li>Dates and times of ejaculation logs you record</li>
+              <li>Method you select for each log</li>
+              <li>Fertility score, day number and phase (calculated by us)</li>
+            </ul>
+          </div>
+          <div class="data">
+            <h3>💞 Partner connection</h3>
+            <ul>
+              <li>Your partner's email address, when you send an invitation</li>
+              <li>Invitation status (pending, accepted, rejected) and related dates</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Technical information</h3>
+        <ul>
+          <li><strong>Authentication token:</strong> after you sign in, a login token is stored on your device in encrypted secure storage (Android Keystore / iOS Keychain) so you stay signed in.</li>
+          <li><strong>Server logs:</strong> like most online services, our servers automatically record basic request data such as IP address, date and time, and error details. We use this only for security, abuse prevention and troubleshooting.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>What we don't collect:</strong> we don't use advertising IDs, third-party analytics or tracking SDKs,
+          and we don't access your location, contacts, camera, microphone, photos or files.
+        </div>
+      </section>
+
+      <section id="use">
+        <h2 class="sec"><span class="n">2</span>How we use your information</h2>
+        <ul>
+          <li><strong>Provide the Service:</strong> create and manage your account, and store and display your logs and history.</li>
+          <li><strong>Calculate insights:</strong> determine your cycle phase, fertile window, ovulation date, chance of pregnancy, fertility score, and show recommendations relevant to your phase.</li>
+          <li><strong>Connect partners:</strong> send invitations and, once accepted, show combined fertility insights to both partners.</li>
+          <li><strong>Account security:</strong> verify your email, send one-time codes, reset passwords and protect against unauthorized access.</li>
+          <li><strong>Service emails:</strong> send essential messages such as verification codes, password resets and partner invitations. We don't send marketing emails.</li>
+          <li><strong>Maintain and improve:</strong> fix bugs, keep the Service running reliably, and comply with legal obligations.</li>
+        </ul>
+        <p class="muted">
+          Where data protection laws such as the GDPR apply, we process your account data to perform our contract with you,
+          process health data based on your explicit consent (given when you choose to enter it), and process security logs
+          based on our legitimate interest in keeping the Service safe. You can withdraw consent at any time by deleting the data or your account.
+        </p>
+      </section>
+
+      <section id="partner">
+        <h2 class="sec"><span class="n">3</span>Partner sharing</h2>
+        <p>
+          Preconcy lets you connect with one partner. Sharing starts only after one person sends an invitation
+          and the other <strong>accepts</strong> it. Once connected:
+        </p>
+        <ul>
+          <li>Your partner can see fertility insights derived from your data, such as cycle phase, fertile window and ovulation date, or fertility score and phase.</li>
+          <li>Your partner can see your name and email address.</li>
+        </ul>
+        <p>You can end the connection at any time from the app. When you do, your partner loses access to your data going forward.</p>
+      </section>
+
+      <section id="share">
+        <h2 class="sec"><span class="n">4</span>Who we share your information with</h2>
+        <p><strong>We do not sell, rent or trade your personal information, and we never share health data with advertisers or data brokers.</strong> We share data only in these cases:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Recipient</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Your connected partner</td><td>Only if you both accept a partner connection. See <a href="#partner">Partner sharing</a>.</td></tr>
+              <tr><td>Hosting provider</td><td>Stores our servers and database on our behalf, under confidentiality and security obligations.</td></tr>
+              <tr><td>Email delivery provider</td><td>Delivers verification codes, password reset codes and partner invitations to your email address.</td></tr>
+              <tr><td>Authorities</td><td>When required by law, court order, or to protect the rights, safety and security of users or the public.</td></tr>
+              <tr><td>Successor organization</td><td>If Preconcy is involved in a merger or acquisition. This Policy would continue to apply to your data, and we'd notify you first.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="security">
+        <h2 class="sec"><span class="n">5</span>Storage &amp; security</h2>
+        <ul>
+          <li>All communication between the app and our servers is encrypted with HTTPS (TLS).</li>
+          <li>Passwords are stored only as salted one-way hashes. We can never see your password.</li>
+          <li>Login tokens on your device are kept in the operating system's encrypted secure storage, and are removed when you log out.</li>
+          <li>Access to production systems is restricted to authorized personnel who need it.</li>
+        </ul>
+        <p class="muted">No method of transmission or storage is 100% secure, but we work hard to protect your information and will notify you of any breach as required by law.</p>
+      </section>
+
+      <section id="retention">
+        <h2 class="sec"><span class="n">6</span>Data retention</h2>
+        <ul>
+          <li>We keep your account and health data for as long as your account is active.</li>
+          <li>One-time codes expire after 10 minutes and are cleared once used.</li>
+          <li>When you delete your account, we delete your personal and health data within <strong>30 days</strong>. Residual copies in backups are overwritten within <strong>90 days</strong>.</li>
+          <li>We may keep limited information longer only where the law requires it.</li>
+        </ul>
+      </section>
+
+      <section id="rights">
+        <h2 class="sec"><span class="n">7</span>Your rights &amp; choices</h2>
+        <p>Depending on where you live, you may have the right to:</p>
+        <ul>
+          <li><strong>Access</strong> the personal data we hold about you and get a copy of it</li>
+          <li><strong>Correct</strong> inaccurate information</li>
+          <li><strong>Delete</strong> your data and your account</li>
+          <li><strong>Restrict or object</strong> to certain processing</li>
+          <li><strong>Withdraw consent</strong> for processing health data at any time</li>
+          <li><strong>Data portability</strong>: receive your data in a machine-readable format</li>
+          <li><strong>Complain</strong> to your local data protection authority</li>
+        </ul>
+        <p>To exercise any of these rights, email us at the address in <a href="#contact">Contact us</a>. We respond within 30 days and may need to verify your identity first.</p>
+      </section>
+
+      <section id="delete">
+        <h2 class="sec"><span class="n">8</span>Deleting your account</h2>
+        <p>You can ask us to delete your Preconcy account and all associated data at any time:</p>
+        <ol>
+          <li>Email <a class="contact-email" href="mailto:support@preconcy.com">support@preconcy.com</a> from the email address registered to your account.</li>
+          <li>Use the subject line <strong>"Delete my account"</strong>.</li>
+          <li>We'll confirm the request and delete your account, cycle logs, symptom logs, fertility logs and partner connection within 30 days.</li>
+        </ol>
+        <p class="muted">Uninstalling the app does not delete your account. Please send a deletion request if you want your data removed.</p>
+      </section>
+
+      <section id="children">
+        <h2 class="sec"><span class="n">9</span>Children</h2>
+        <p>
+          Preconcy is intended for adults aged <strong>18 and older</strong>. We do not knowingly collect personal information from anyone under 18.
+          If you believe a minor has created an account, contact us and we will delete it.
+        </p>
+      </section>
+
+      <section id="medical">
+        <h2 class="sec"><span class="n">10</span>Medical disclaimer</h2>
+        <p>
+          Preconcy is an informational tracking tool. Its predictions and insights are estimates based on the data you enter and general
+          patterns. They are <strong>not medical advice</strong> and must not be used as a method of contraception or as a substitute for
+          professional diagnosis or treatment. Always consult a qualified healthcare provider about your health.
+        </p>
+      </section>
+
+      <section id="changes">
+        <h2 class="sec"><span class="n">11</span>Changes to this policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. When we do, we'll change the "Effective" date at the top of this page and,
+          for significant changes, notify you in the app or by email before they take effect.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2 class="sec"><span class="n">12</span>Contact us</h2>
+        <p>If you have questions about this Privacy Policy or how we handle your data, contact us:</p>
+        <p>
+          <strong>Preconcy</strong><br>
+          Email: <a class="contact-email" href="mailto:support@preconcy.com">support@preconcy.com</a><br>
+          Website: <a href="https://preconcy.com">preconcy.com</a>
+        </p>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<footer>© 2026 Preconcy. All rights reserved.</footer>
+
+<button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">🌓</button>
+<script>
+  (function () {
+    var root = document.documentElement, key = 'preconcy-theme';
+    try { var saved = localStorage.getItem(key); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var dark = root.getAttribute('data-theme')
+        ? root.getAttribute('data-theme') === 'dark'
+        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var next = dark ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem(key, next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
